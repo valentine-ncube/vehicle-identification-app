@@ -40,7 +40,7 @@ function App() {
 
     // Azure Custom Vision API settings
     const apiEndpoint =
-      'https://insuranceprototype-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/a70aa712-bfcd-40c3-abfc-866024c636f8/classify/iterations/Iteration2/image'
+      'https://insuranceprototype-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/a70aa712-bfcd-40c3-abfc-866024c636f8/classify/iterations/Iteration7/image'
     const predictionKey =
       '4huIIf1LmJk4O19j90pXWeg1tvqJOvbn3TrtFSnA6apBbYnQCv51JQQJ99AKACYeBjFXJ3w3AAAIACOGtYtI'
 
