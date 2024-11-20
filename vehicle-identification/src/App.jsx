@@ -7,6 +7,19 @@ function App() {
   const [prediction, setPrediction] = useState(null) //Holds predicion results
   const [loading, setLoading] = useState(false) //Loading state
 
+  // Function to determine premium information
+  const getInsuranceInfo = (vehicleType) => {
+    const premiumInfo = {
+      Suv: 'Premium starts at $300/month.',
+      Truck: 'Premium starts at $400/month.',
+      Sedan: 'Premium starts at $200/month.',
+    }
+    // Converting the tagNames to match the dictionary keys using Normalization
+    const normalizedType =
+      vehicleType.charAt(0).toUpperCase() + vehicleType.slice(1).toLowerCase()
+    return premiumInfo[normalizedType] || 'No premium information available.'
+  }
+
   //  Handling image upload
   const handleImageUpload = (e) => {
     const file = e.target.files[0]
@@ -47,7 +60,7 @@ function App() {
       const topPrediction = predictions[0]
       setPrediction({
         tagName: topPrediction.tagName,
-        probability: (topPrediction.probability * 100).toFixed(2),
+        //probability: (topPrediction.probability * 100).toFixed(2),
       })
     } catch (error) {
       console.error('Error making prediction', error)
@@ -79,8 +92,12 @@ function App() {
           <p>
             <strong>Type:</strong> {prediction.tagName}
           </p>
-          <p>
+          {/* <p>
             <strong>Confidence:</strong> {prediction.probability}%
+          </p> */}
+          <p>
+            <strong>Insurance Information:</strong>{' '}
+            {getInsuranceInfo(prediction.tagName)}
           </p>
         </div>
       )}
