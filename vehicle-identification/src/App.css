@@ -1,19 +1,26 @@
 /* App.css */
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f3ea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .app-container {
-  padding: 20px;
   text-align: center;
+  background: #ffbe98;
+  padding: 20px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  color: #333;
+  color: #0b1957;
 }
 
 .form-container {
@@ -26,7 +33,7 @@ h1 {
 
 .button {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #5784e6;
   color: white;
   border: none;
   border-radius: 5px;
@@ -48,4 +55,16 @@ h1 {
 
 .result-container p {
   font-size: 18px;
+}
+
+.preview-container {
+  margin-top: 20px;
+}
+
+.uploaded-image {
+  max-width: 100%;
+  max-height: 300px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

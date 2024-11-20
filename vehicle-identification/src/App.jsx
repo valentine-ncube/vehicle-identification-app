@@ -4,7 +4,8 @@ import './App.css'
 
 function App() {
   const [image, setImage] = useState(null) //Holds the uploaded image
-  const [prediction, setPrediction] = useState(null) //Holds predicion results
+  const [preview, setPreview] = useState(null) //Holds the preview URL
+  const [prediction, setPrediction] = useState(null) //Holds prediction results
   const [loading, setLoading] = useState(false) //Loading state
 
   // Function to determine premium information
@@ -25,6 +26,7 @@ function App() {
     const file = e.target.files[0]
     if (file) {
       setImage(file)
+      setPreview(URL.createObjectURL(file))
     }
   }
 
@@ -83,9 +85,19 @@ function App() {
           />
         </div>
         <button type="submit" className="button" disabled={loading}>
-          {loading ? 'Analyzing...' : 'Upload & Predict'}
+          {loading ? 'Analyzing...' : 'Upload '}
         </button>
       </form>
+      {preview && (
+        <div className="preview-container">
+          {/* <h3>Uploaded Image:</h3> */}
+          <img
+            src={preview}
+            alt="Uploaded Preview"
+            className="uploaded-image"
+          />
+        </div>
+      )}
       {prediction && (
         <div>
           <h2>Prediction Result:</h2>
